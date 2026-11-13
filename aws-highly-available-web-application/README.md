@@ -25,7 +25,7 @@ The primary objectives of this project are:
 | Launch Template | Standardized EC2 instance configuration |
 | Amazon CloudWatch | Monitoring and alarms |
 | Amazon SNS | Email notifications |
-| Amazon Certificate Management | SSL/TLS certificates to secure websites |
+| Amazon Certificate Manager | SSL/TLS certificates to secure websites |
 # Phase 1: Networking
 A VPC in N. virginia was created for the project
 The VPC contains:
