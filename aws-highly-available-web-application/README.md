@@ -30,7 +30,15 @@ The primary objectives of this project are:
 A VPC in N. virginia was created for the project
 The VPC contains:
 
-Two Availability Zones
-Two public subnets
-Internet Gateway
-Route tables
+1.  Two Availability Zones
+2.  Two Public Subnet
+3.  Internet Gateway
+4.  Route Table
+
+![VPC](screenshot/VPC.png)
+
+![Public Subnet](screenshot/subnet.png)
+
+![internet gateway](screenshot/Igw.png)
+
+![route table](screenshot/route_table.png)
