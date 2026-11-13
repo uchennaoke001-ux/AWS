@@ -152,4 +152,42 @@ The Auto Scaling Group successfully launched a replacement instance.
 
 This demonstrated the self-healing capability of the architecture.
 
-![lb_testing2](screenshot/LB_testing2.png)
+![terminating-instance](screenshot/terminating-instance.png)
+
+![new-instance](screenshot/new-instance.png)
+
+# Phase 4
+## HTTPS (Certificate Management)
+a self-signed certificate was created to test for a secure website using TLS
+
+Generate the certificate in cloudshell and import into ACM
+
+add HTTPS listener and redirect
+
+![Certificate](screenshot/certificate.png)
+
+# Phase 5: Monitoring
+Amazon CloudWatch was configured to monitor EC2 CPU utilization.
+
+The project uses CPU alarms with a threshold of:
+
+```text
+CPU Utilization > 70%
+```
+
+for five minutes.
+
+CloudWatch provides visibility into application server resource utilization and can be extended to support automated scaling policies.
+
+![CW_Alarm](screenshot/CW_alarm.png)
+
+# 12. High Availability Test Results
+
+| Test                              | Expected Result                | Result   |
+| --------------------------------- | ------------------------------ | -------- |
+| Access application through ALB    | Application loads              | ✅ Passed |
+| ALB routes traffic to EC2         | Traffic reaches healthy target | ✅ Passed |
+| EC2 instance failure              | ASG replaces instance          | ✅ Passed |
+| Replacement instance health check | Instance becomes healthy       | ✅ Passed |
+| ALB after instance replacement    | Application remains available  | ✅ Passed |
+---
