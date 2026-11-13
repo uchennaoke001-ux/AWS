@@ -12,3 +12,25 @@ The primary objectives of this project are:
 5.	Secure access: serve traffic over HTTPS using an ACM certificate, restrict instance access to the load balancer only, and use Session Manager instead of SSH.
 6.	Observability: monitor the system with CloudWatch alarms, a dashboard and SNS email notifications.
 # Architecture
+![Architecture diagram](architecture/aws.png.png)
+# AWS Services Used
+| AWS Service | Purpose |
+|---|---|
+| Amazon VPC | Virtual Network isolation |
+| Internet Gateway | VPC resources to communicate with the internet |
+| Amazon EC2 | Web/application servers |
+| Application Load Balancer | Traffic distribution and high availability |
+| Target Group | Health checking and routing traffic to EC2 |
+| Auto Scaling Group | Automatic scaling and instance replacement |
+| Launch Template | Standardized EC2 instance configuration |
+| Amazon CloudWatch | Monitoring and alarms |
+| Amazon SNS | Email notifications |
+| Amazon Certificate Management | SSL/TLS certificates to secure websites |
+# Phase 1: Networking
+A VPC in N. virginia was created for the project
+The VPC contains:
+
+Two Availability Zones
+Two public subnets
+Internet Gateway
+Route tables
